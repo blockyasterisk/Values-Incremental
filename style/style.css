@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    font-family: 'Cousine', monospace;
+    background-color: black;
+    color: white;
+}
+
+button {
+    background-color: black;
+    font-family: 'Cousine', monospace;
+    color: white;
+    border: 2px solid white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 240px;
+}
