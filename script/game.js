@@ -1,5 +1,5 @@
 const player = {
-    progress: 1e28,
+    progress: 10,
     producers: {
         amount: [0, 0, 0, 0],
         purchased: [0, 0, 0, 0],
