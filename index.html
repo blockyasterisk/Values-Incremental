@@ -5,78 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Values Incremental</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <h1 style="margin-left: 1%">Values Incremental</h1>
-    <p style="text-align: center;">
-        You have <b id="progress" style="color: white; text-shadow: 0 0 10px white">10</b> progress.
-    </p>
-    <div style="display: flex; align-items: center; margin: 0 10%;">
-        <span style="flex: 1; text-align: left;">Purpose: <span id="prod1-amount">0</span> [<span
-                id="prod1-purchased">0</span>]</span>
-        <span style="flex: 1; text-align: left;">producing: <span id="prod1-production">0</span></span>
-        <button id="prod1-buy" onclick="buyProducer(1)" style="margin-left: auto;">Purpose</button>
+
+    <div id="app">
+        <div class="currency-container">
+            <div class="progress-currency">
+                <div class="progress-display">
+                    You have <b style="text-shadow: 0 0 10px white">{{ format(player.progress, 2) }}</b> progress.
+                </div>
+            </div>
+        </div>
+        <div class="producers-container">
+            <div class="generators-container">
+                <div class="generator virtue-generator" v-for="generator in player.virtues" :key="generator.name">
+                    <generator :generator="generator" :player="player"></generator>
+                </div>
+            </div>
+        </div>
     </div>
-    <div style="display: flex; align-items: center; margin: 0 10%;">
-        <span style="flex: 1; text-align: left;">Perseverance: <span id="prod2-amount">0</span> [<span
-                id="prod2-purchased">0</span>]</span>
-        <span style="flex: 1; text-align: left;">producing: <span id="prod2-production">0</span></span>
-        <button id="prod2-buy" onclick="buyProducer(2)" style="margin-left: auto;">Perseverance</button>
-    </div>
-    <div style="display: flex; align-items: center; margin: 0 10%;">
-        <span style="flex: 1; text-align: left;">Prudence: <span id="prod3-amount">0</span> [<span
-                id="prod3-purchased">0</span>]</span>
-        <span style="flex: 1; text-align: left;">producing: <span id="prod3-production">0</span></span>
-        <button id="prod3-buy" onclick="buyProducer(3)" style="margin-left: auto;">Prudence</button>
-    </div>
-    <div style="display: flex; align-items: center; margin: 0 10%;">
-        <span style="flex: 1; text-align: left;">Patience: <span id="prod4-amount">0</span> [<span
-                id="prod4-purchased">0</span>]</span>
-        <span style="flex: 1; text-align: left;">producing: <span id="prod4-production">0</span></span>
-        <button id="prod4-buy" onclick="buyProducer(4)" style="margin-left: auto;">Patience</button>
-    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script/game.js"></script>
-    <hr>
-    <div>
-        <b>13 July 2026</b>
-        <ul>
-            <li>added hotkey support</li>
-            <li>increased cost scaling in order to stagnate progression (got to around e60 w/ 200x game speed)</li>
-        </ul>
-        <b>12 July 2026</b>
-        <ul>
-            <li>renamed production factors to virtues (patience &rarr; prudence &rarr; perseverance &rarr; purpose
-                &rarr; progress)</li>
-            <li>changed the cost scaling mechanism</li>
-            <li>changed the interface to be a little bit more compact, inspired by AD and Fundamental</li>
-        </ul>
-    </div>
-    <div>
-        <b>04 July 2026</b>
-        <ul>
-            <li>kinda nerfed the producers</li>
-        </ul>
-    </div>
-    <div>
-        <b>03 July 2026</b>
-        <ul>
-            <li>added a button for activating/buying G's to produce Q's or lower G's</li>
-            <li>added the mechanic for activating/buying G's to produce Q's or lower G's</li>
-        </ul>
-    </div>
-    <div>
-        <b>02 July 2026</b>
-        <ul>
-            <li>started with the basic production of Q's using G's, with inspiration from the game "Antimatter
-                Dimensions".</li>
-            <li>added flexRound(num), which uses scientific notation (4sf) for numbers greater than 1e4 and less than
-                0.1, and adds commas
-                to numbers in between 0.1 and 1e4</li>
-        </ul>
-    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/generator.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/loop.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/components/generator.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
