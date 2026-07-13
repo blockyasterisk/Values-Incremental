@@ -10,9 +10,9 @@ const player = {
 const game = {
     producers: {
         costs: [10, 1e6, 1e15, 1e27],
-        costMultipliers: [1.5625, 2.25, 3.0625, 4],
+        costMultipliers: [1.75, 3.00, 4.25, 5.50],
         scaleStart: [15, 15, 15, 15],
-        scaleFactor: 5
+        scaleFactor: 10
     }
 };
 
@@ -130,4 +130,3 @@ $(document).on("keydown", function(event) {
         }
     }
 });
-
