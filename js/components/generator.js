@@ -10,7 +10,7 @@ const GeneratorComponent = {
     },
     template: `
     <div>
-        <h4>{{ generator.name }}</h4>
+        <p><b>{{ generator.name }}</b> [{{ generator.bought }}]</p>
         <span class="generator-amount">{{ format(generator.amount, 0) }}</span>
         <span class="generator-multiplier"> &times; {{ format(generator.multiplier, 2) }}</span>
         <span class="generator-prod-per-sec"> = {{ format(generator.productionPerSecond, 2) }}/s</span>

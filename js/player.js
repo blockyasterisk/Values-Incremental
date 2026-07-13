@@ -26,7 +26,7 @@ player.virtues.push(new Generator({
 }));
 player.virtues.push(new Generator({
     name: "Prudence",
-    cost: 1e15,
+    cost: 1e14,
     costMult: 4.25,
     scaleStart: 15,
     scaleFactor: 10,
@@ -36,7 +36,7 @@ player.virtues.push(new Generator({
 }));
 player.virtues.push(new Generator({
     name: "Patience",
-    cost: 1e27,
+    cost: 1e25,
     costMult: 5.5,
     scaleStart: 15,
     scaleFactor: 10,
