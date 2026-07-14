@@ -28,4 +28,5 @@ var app = Vue.createApp({
 });
 
 app.component('generator', GeneratorComponent);
+app.component('side-panel', SidePanel);
 app.mount('#app');
