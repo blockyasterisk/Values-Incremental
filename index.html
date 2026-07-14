@@ -10,27 +10,30 @@
 
 <body>
     <div id="title">
-        <h1>Values Incremental</h1> by blockyasterisk
+        <b style="font-size: 24px;">Values Incremental</b><sub>0.1.2</sub> by blockyasterisk
     </div>
     <div id="app">
         <div class="currency-container">
             <div class="progress-currency">
                 <div class="progress-display">
-                    You have <b style="text-shadow: 0 0 10px white">{{ format(player.progress, 2) }}</b> progress.
+                    You have <b style="text-shadow: 0 0 10px white">{{ format(player.progress, 2, 3) }}</b> progress.
                 </div>
             </div>
         </div>
         <div class="producers-container">
             <div class="generators-container">
-                <div class="generator virtue-generator" v-for="generator in player.virtues" :key="generator.name">
-                    <generator :generator="generator" :player="player"></generator>
-                </div>
+                <template v-for="(generator, idx) in player.virtues" :key="generator.name">
+                    <div class="generator virtue-generator" v-if="virtueIsVisible(idx)">
+                        <generator :generator="generator" :player="player"></generator>
+                    </div>
+                </template>
             </div>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/break_infinity.js@2"></script>
     <script src="js/components/generator.js"></script>
     <script src="js/generator.js"></script>
     <script src="js/player.js"></script>
